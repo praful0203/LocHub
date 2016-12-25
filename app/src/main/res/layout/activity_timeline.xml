@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_timeline"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.praful.lochub.Timeline">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="98dp"
+        android:id="@+id/edtxtPlace"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:hint="Place Name"
+        android:gravity="center_vertical|center_horizontal"
+        android:fontFamily="casual"
+        android:textColorHint="@android:color/holo_green_dark" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_below="@+id/edtxtPlace"
+        android:layout_alignParentStart="true"
+        android:id="@+id/edtxtLatitu"
+        android:layout_alignParentEnd="true"
+        android:textColor="@android:color/holo_green_dark"
+        android:fontFamily="casual"
+        android:gravity="center_vertical|center_horizontal" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_below="@+id/edtxtLatitu"
+        android:layout_alignParentStart="true"
+        android:id="@+id/edtxtLongitu"
+        android:layout_alignParentEnd="true"
+        android:textColor="@android:color/holo_green_dark"
+        android:fontFamily="casual"
+        android:gravity="center_vertical|center_horizontal" />
+
+    <Button
+        android:text="Save to Timeline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtxtLongitu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:id="@+id/btnSave"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:onClick="onClick (Timeline)" />
+</RelativeLayout>

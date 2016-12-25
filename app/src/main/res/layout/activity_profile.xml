@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.praful.lochub.ProfileActivity"
+    android:background="#ffffff">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/textViewUserEmail"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="casual"
+        android:textColor="@color/colorAccent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+
+    <Button
+        android:text="Get Location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnGet"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:fontFamily="casual"
+        android:textStyle="normal|bold"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:layout_below="@+id/edtxtLongi"
+        android:layout_centerHorizontal="true"
+        android:onClick="onBtnGet"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/edtxtLati"
+        android:hint="Latitude"
+        android:textAlignment="center"
+        android:fontFamily="casual"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/textViewUserEmail"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/edtxtLongi"
+        android:fontFamily="casual"
+        android:hint="Longitude"
+        android:textAlignment="center"
+        android:layout_below="@+id/edtxtLati"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:id="@+id/buttonLogout"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="casual"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textStyle="normal|bold"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:background="@color/colorAccent"
+        android:onClick="onClick"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/loc"
+        android:id="@+id/imgbtnLocate"
+        android:background="@null"
+        android:layout_marginBottom="19dp"
+        android:onClick="onClickLocate"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:background="@drawable/showonmap"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:id="@+id/imgbtnMap"
+        android:layout_below="@+id/edtxtLongi"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
+

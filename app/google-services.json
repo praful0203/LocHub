@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1056758508084",
+    "firebase_url": "https://lochu-d0160.firebaseio.com",
+    "project_id": "lochu-d0160",
+    "storage_bucket": "lochu-d0160.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056758508084:android:d802d7f17f5a0b77",
+        "android_client_info": {
+          "package_name": "com.praful.lochub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056758508084-an3i1nn0bdgrpb8npl61c7l5cv0rt0nj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.praful.lochub",
+            "certificate_hash": "893A01D8AB7E544077592548BE84DEFF92B16546"
+          }
+        },
+        {
+          "client_id": "1056758508084-r5j17qmkmeno0eourpj2b11dvtnrdr9i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk5MmsXP0EEYVqQhFUbgACroNfbyoYqG4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056758508084-r5j17qmkmeno0eourpj2b11dvtnrdr9i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
