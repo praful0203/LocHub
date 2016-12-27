@@ -15,8 +15,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Timeline extends AppCompatActivity {
 
-    public FirebaseAuth firebaseAuth;
-    public DatabaseReference databaseReference;
+    private  FirebaseAuth firebaseAuth;
+    private DatabaseReference databaseReference;
     public String place;
     public String latt, longg;
     public Button btnSave;
@@ -29,34 +29,25 @@ public class Timeline extends AppCompatActivity {
         EditText edtxtLongitu = (EditText) findViewById(R.id.edtxtLongitu);
         EditText edtxtPlace = (EditText) findViewById(R.id.edtxtPlace);
         btnSave = (Button) findViewById(R.id.btnSave);
-
-        place = edtxtPlace.getText().toString();
-
         databaseReference = FirebaseDatabase.getInstance().getReference();
-
+        firebaseAuth = FirebaseAuth.getInstance();
         latt = getIntent().getStringExtra("txt_loc_lati");
         longg = getIntent().getStringExtra("txt_loc_longi");
         edtxtLatitu.setText(latt);
         edtxtLongitu.setText(longg);
+        place = edtxtPlace.getText().toString().trim();
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    saveUserInformation();
-                    Intent intent = new Intent(getApplicationContext(),ProfileActivity.class);
-                    startActivity(intent);
+                UserInfo userInfo = new UserInfo(place,latt,longg);
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                String key = databaseReference.push().getKey();
+                databaseReference.child(key).setValue(userInfo);
+                Toast.makeText(Timeline.this, "Information Saved !", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(),ProfileActivity.class);
+                startActivity(intent);
             }
         });
 
-    }
-
-    public void saveUserInformation() {
-        String loc = place;
-        String laati = latt;
-        String loongi = longg;
-
-        FirebaseUser user = firebaseAuth.getCurrentUser();
-        UserInfo userInfo = new UserInfo(loc, laati, loongi);
-        databaseReference.child(user.getUid()).setValue(userInfo);
-        Toast.makeText(this, "Place is Saved Successfully...!", Toast.LENGTH_SHORT).show();
     }
 }

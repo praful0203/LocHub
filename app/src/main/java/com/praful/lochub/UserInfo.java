@@ -14,8 +14,8 @@ class UserInfo {
     }
 
     public UserInfo(String place, String latitude, String longitude) {
-        Place = place;
-        Latitude = latitude;
-        Longitude = longitude;
+        this.Place = place;
+        this.Latitude = latitude;
+        this.Longitude = longitude;
     }
 }
