@@ -35,12 +35,12 @@ public class Timeline extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         latt = getIntent().getStringExtra("txt_loc_lati");
         longg = getIntent().getStringExtra("txt_loc_longi");
-        place = edTxtPlace.getText().toString().trim();
         edtxtLatitu.setText(latt);
         edtxtLongitu.setText(longg);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                place = edTxtPlace.getText().toString().trim();
                 UserInfo userInfo = new UserInfo(place,latt,longg);
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 String key = databaseReference.push().getKey();
