@@ -13,29 +13,31 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
 public class Timeline extends AppCompatActivity {
 
     private  FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
     public String place;
     public String latt, longg;
+    public EditText edtxtLatitu,edtxtLongitu;
     public Button btnSave;
-
+    public EditText edTxtPlace;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
-        EditText edtxtLatitu = (EditText) findViewById(R.id.edtxtLatitu);
-        EditText edtxtLongitu = (EditText) findViewById(R.id.edtxtLongitu);
-        EditText edtxtPlace = (EditText) findViewById(R.id.edtxtPlace);
+        edtxtLatitu = (EditText) findViewById(R.id.edtxtLatitu);
+        edtxtLongitu = (EditText) findViewById(R.id.edtxtLongitu);
+        edTxtPlace = (EditText)findViewById(R.id.edTxtPlace);
         btnSave = (Button) findViewById(R.id.btnSave);
         databaseReference = FirebaseDatabase.getInstance().getReference();
         firebaseAuth = FirebaseAuth.getInstance();
         latt = getIntent().getStringExtra("txt_loc_lati");
         longg = getIntent().getStringExtra("txt_loc_longi");
+        place = edTxtPlace.getText().toString().trim();
         edtxtLatitu.setText(latt);
         edtxtLongitu.setText(longg);
-        place = edtxtPlace.getText().toString().trim();
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -133,7 +133,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 Intent localIntent = new Intent(getApplicationContext(), MapsActivity.class);
                 localIntent.putExtra("txt_latitude", txtLati);
                 localIntent.putExtra("txt_longitude", txtLongi);
-                Toast.makeText(ProfileActivity.this, "Button clicked!!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProfileActivity.this, "Co-ordinates on Map.", Toast.LENGTH_SHORT).show();
                 startActivity(localIntent);
             }
         });
