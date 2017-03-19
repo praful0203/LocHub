@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.praful.lochub.LoginActivity"
-    android:background="#ffffff">
+    android:background="@drawable/gradient">
 
 
     <LinearLayout
@@ -17,8 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:weightSum="1"
-        android:background="#ffffff">
+        android:weightSum="1">
 
         <ImageView
             android:layout_width="match_parent"
@@ -27,8 +26,7 @@
             android:id="@+id/imageView3"
             android:layout_alignParentTop="true"
             android:layout_marginTop="34dp"
-            android:layout_weight="0.36"
-            android:background="#ffffff" />
+            android:layout_weight="0.36" />
 
 
         <EditText
@@ -39,7 +37,9 @@
             android:hint="Enter email"
             android:inputType="textEmailAddress"
             android:fontFamily="casual"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"/>
 
 
         <EditText
@@ -50,7 +50,9 @@
             android:hint="Enter password"
             android:inputType="textPassword"
             android:fontFamily="casual"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"/>
 
         <Button
             android:id="@+id/buttonSignin"
@@ -64,7 +66,7 @@
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:background="@color/colorAccent" />
+            android:background="@drawable/gradientcd2" />
 
         <TextView
             android:text="Not have an account? Signup Here"
@@ -73,7 +75,7 @@
             android:layout_margin="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/holo_red_light" />
+            android:textColor="@android:color/white" />
 
 
     </LinearLayout>
