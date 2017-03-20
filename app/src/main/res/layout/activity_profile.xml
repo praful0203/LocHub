@@ -13,31 +13,24 @@
 
 
     <TextView
+        android:id="@+id/textViewUserEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/textViewUserEmail"
-        android:layout_gravity="center_horizontal"
-        android:fontFamily="casual"
-        android:textColor="@color/colorAccent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
+        android:text="TextView" />
 
     <Button
-        android:text="Get Location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/btnGet"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:fontFamily="casual"
-        android:textStyle="normal|bold"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:layout_below="@+id/edtxtLongi"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imgbtnMap"
         android:layout_centerHorizontal="true"
-        android:onClick="onBtnGet"/>
+        android:fontFamily="casual"
+        android:text="Get Location"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="normal|bold"
+        android:background="@drawable/gradientcd2"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -48,8 +41,8 @@
         android:hint="Latitude"
         android:textAlignment="center"
         android:fontFamily="casual"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/textViewUserEmail"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/buttonLogout"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
@@ -69,7 +62,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Logout"
         android:id="@+id/buttonLogout"
         android:layout_gravity="center_horizontal"
         android:fontFamily="casual"
@@ -77,21 +69,24 @@
         android:textStyle="normal|bold"
         android:textAllCaps="false"
         android:textSize="18sp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/logout"
+        android:backgroundTint="@android:color/black"
         android:onClick="onClick"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/imgbtnMap"
+        tools:targetApi="lollipop" />
 
     <ImageButton
+        android:id="@+id/imgbtnLocate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/loc"
-        android:id="@+id/imgbtnLocate"
-        android:background="@null"
-        android:layout_marginBottom="19dp"
-        android:onClick="onClickLocate"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:background="@null"
+        android:onClick="onClick"
+        app:srcCompat="@drawable/loc" />
 
     <ImageButton
         android:background="@drawable/showonmap"

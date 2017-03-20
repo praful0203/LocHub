@@ -16,6 +16,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +26,8 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Objects;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -127,15 +130,30 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         //adding listener to button
         buttonLogout.setOnClickListener(this);
+
+        btnGet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                locationManager.requestLocationUpdates("gps", 5000, 0, locationListener);
+                Toast.makeText(ProfileActivity.this, "Please wait whle location is being retrieved...", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         imgbtnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent localIntent = new Intent(getApplicationContext(), MapsActivity.class);
-                localIntent.putExtra("txt_latitude", txtLati);
-                localIntent.putExtra("txt_longitude", txtLongi);
-                Toast.makeText(ProfileActivity.this, "Co-ordinates on Map.", Toast.LENGTH_SHORT).show();
-                startActivity(localIntent);
-            }
+                if (TextUtils.isEmpty(txtLati)||TextUtils.isEmpty(txtLongi))
+                {
+                    Toast.makeText(ProfileActivity.this, "Click on Get Location to get location", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent localIntent = new Intent(getApplicationContext(), MapsActivity.class);
+                    localIntent.putExtra("txt_latitude", txtLati);
+                    localIntent.putExtra("txt_longitude", txtLongi);
+                    Toast.makeText(ProfileActivity.this, "Co-ordinates on Map.", Toast.LENGTH_SHORT).show();
+                    startActivity(localIntent);
+                }
+                    }
         });
     }
 
@@ -149,7 +167,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void configureButton() {
-        btnGet.setOnClickListener(this);
 
         imgbtnLocate.setOnClickListener(this);
     }
@@ -164,22 +181,20 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             //starting login activity
             startActivity(new Intent(this, LoginActivity.class));
         }
-    }
-
-    public void onBtnGet(View view) {
-        locationManager.requestLocationUpdates("gps", 5000, 0, locationListener);
-    }
-
-    public void onClickLocate(View view) {
-            Intent intent = new Intent(getApplicationContext(), Timeline.class);
-            intent.putExtra("txt_loc_lati", txtLati);
-            intent.putExtra("txt_loc_longi", txtLongi);
-            startActivity(intent);
+        if (view == imgbtnLocate) {
+            if (TextUtils.isEmpty(txtLati)||TextUtils.isEmpty(txtLongi))
+            {
+                Toast.makeText(ProfileActivity.this, "Location cannot be empty!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Intent intent = new Intent(getApplicationContext(), Timeline.class);
+                intent.putExtra("txt_loc_lati", txtLati);
+                intent.putExtra("txt_loc_longi", txtLongi);
+                startActivity(intent);
                 /*b.putDouble("txt_loc_longi",lont);
                 b.putDouble("txt_loc_lati", lat);*/
+            }
+
         }
-    private void Testupload(){
-        int i = 1+1;
+      }
     }
-    
-}
