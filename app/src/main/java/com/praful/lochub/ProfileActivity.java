@@ -27,8 +27,6 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.Objects;
-
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     //firebase auth object

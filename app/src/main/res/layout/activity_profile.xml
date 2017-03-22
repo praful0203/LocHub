@@ -60,8 +60,8 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:id="@+id/buttonLogout"
         android:layout_gravity="center_horizontal"
         android:fontFamily="casual"
@@ -70,12 +70,10 @@
         android:textAllCaps="false"
         android:textSize="18sp"
         android:background="@drawable/logout"
-        android:backgroundTint="@android:color/black"
         android:onClick="onClick"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/imgbtnMap"
-        tools:targetApi="lollipop" />
+        android:layout_alignStart="@+id/imgbtnMap" />
 
     <ImageButton
         android:id="@+id/imgbtnLocate"

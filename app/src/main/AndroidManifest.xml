@@ -39,7 +39,9 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".DataActivity" />
-        <activity android:name=".RetrieveActivity"></activity>
+        <activity android:name=".RetrieveActivity">
+
+        </activity>
     </application>
 
 </manifest>
