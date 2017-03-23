@@ -6,16 +6,31 @@ package com.praful.lochub;
 
 class UserInfo {
 
-    public String Place;
-    public String Latitude,Longitude;
+    public String place;
+    public String latitude,longitude;
+
+
+    public UserInfo(String place, String latitude, String longitude) {
+        this.place = place;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+    public String getPlace() {
+        return place;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
 
     public UserInfo() {
 
+
     }
 
-    public UserInfo(String place, String latitude, String longitude) {
-        this.Place = place;
-        this.Latitude = latitude;
-        this.Longitude = longitude;
-    }
+
 }

@@ -94,5 +94,16 @@
         android:layout_below="@+id/edtxtLongi"
         android:layout_alignParentEnd="true" />
 
+    <ImageButton
+        android:id="@+id/imgbtnSaved"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_above="@+id/imgbtnLocate"
+        android:layout_alignEnd="@+id/imgbtnLocate"
+        android:layout_alignStart="@+id/imgbtnLocate"
+        android:layout_marginBottom="34dp"
+        android:background="@android:color/white"
+        app:srcCompat="@drawable/savedloc" />
+
 </RelativeLayout>
 

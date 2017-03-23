@@ -35,7 +35,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     //view objects
     public TextView textViewUserEmail;
     private Button buttonLogout, btnGet;
-    public ImageButton imgbtnMap, imgbtnLocate;
+    public ImageButton imgbtnMap, imgbtnLocate,imgbtnSaved;
     public EditText edtxtLati, edtxtLongi;
     private LocationManager locationManager;
     private LocationListener locationListener;
@@ -63,6 +63,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         edtxtLongi = (EditText) findViewById(R.id.edtxtLongi);
         imgbtnMap = (ImageButton) findViewById(R.id.imgbtnMap);
         imgbtnLocate = (ImageButton) findViewById(R.id.imgbtnLocate);
+        imgbtnSaved = (ImageButton) findViewById(R.id.imgbtnSaved);
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
@@ -152,6 +153,14 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     startActivity(localIntent);
                 }
                     }
+        });
+
+        imgbtnSaved.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),RetrieveActivity.class);
+                startActivity(intent);
+            }
         });
     }
 
