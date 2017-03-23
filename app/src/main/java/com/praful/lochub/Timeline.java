@@ -31,7 +31,7 @@ public class Timeline extends AppCompatActivity {
         edtxtLongitu = (EditText) findViewById(R.id.edtxtLongitu);
         edTxtPlace = (EditText)findViewById(R.id.edTxtPlace);
         btnSave = (Button) findViewById(R.id.btnSave);
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference("users");
         firebaseAuth = FirebaseAuth.getInstance();
         latt = getIntent().getStringExtra("txt_loc_lati");
         longg = getIntent().getStringExtra("txt_loc_longi");
@@ -43,8 +43,9 @@ public class Timeline extends AppCompatActivity {
                 place = edTxtPlace.getText().toString().trim();
                 UserInfo userInfo = new UserInfo(place,latt,longg);
                 FirebaseUser user = firebaseAuth.getCurrentUser();
+                String uid = firebaseAuth.getCurrentUser().getUid();
                 String key = databaseReference.push().getKey();
-                databaseReference.child(key).setValue(userInfo);
+                databaseReference.child(uid).child(key).setValue(userInfo);
                 Toast.makeText(Timeline.this, "Information Saved !", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(),ProfileActivity.class);
                 startActivity(intent);
