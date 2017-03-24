@@ -51,5 +51,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(sydney).title("You Are Here!"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         mMap.animateCamera(CameraUpdateFactory.newLatLng(sydney));
+        // Zoom in, animating the camera.
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(14), 2000, null);
     }
 }

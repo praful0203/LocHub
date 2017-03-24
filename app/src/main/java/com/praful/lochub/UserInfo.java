@@ -6,17 +6,17 @@ package com.praful.lochub;
 
 class UserInfo {
 
-    public String Place;
+    public String place;
     public String latitude,longitude;
 
 
-    public UserInfo(String Place, String latitude, String longitude) {
-        this.Place = Place;
+    public UserInfo(String place, String latitude, String longitude) {
+        this.place = place;
         this.latitude = latitude;
         this.longitude = longitude;
     }
     public String getPlace() {
-        return Place;
+        return place;
     }
 
     public String getLatitude() {
