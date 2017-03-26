@@ -40,11 +40,12 @@ public class Timeline extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String uid = firebaseAuth.getCurrentUser().getUid();
+                String key = databaseReference.push().getKey();
                 place = edTxtPlace.getText().toString().trim();
                 UserInfo userInfo = new UserInfo(place,latt,longg);
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                String uid = firebaseAuth.getCurrentUser().getUid();
-                String key = databaseReference.push().getKey();
+
                 databaseReference.child(uid).child(key).setValue(userInfo);
                 Toast.makeText(Timeline.this, "Information Saved !", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(),ProfileActivity.class);
