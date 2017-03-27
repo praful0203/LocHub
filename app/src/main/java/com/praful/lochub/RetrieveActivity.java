@@ -73,7 +73,7 @@ public class RetrieveActivity extends AppCompatActivity {
     }
 
     private void showData(String userPlace, String p_latitude, String p_longitude) {
-        showDataTxt.setText(showDataTxt.getText().toString()+userPlace+p_latitude+p_longitude+"\n");
+        showDataTxt.setText(showDataTxt.getText().toString()+userPlace+p_latitude+p_longitude+"\n\t");
     }
 
 }
