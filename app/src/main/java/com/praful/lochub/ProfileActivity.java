@@ -50,11 +50,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_profile);
 
         ActionBar actionBar = getSupportActionBar();
-        assert actionBar != null;
         actionBar.setDisplayShowHomeEnabled(true);
         SpannableString spannableString = new SpannableString(actionBar.getTitle());
         spannableString.setSpan(new mytypeface("", Typeface.createFromAsset(getAssets(), "lochub.ttf")), 0, spannableString.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
         actionBar.setTitle(spannableString);
+
         //initializing views
         textViewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
         btnGet = (Button) findViewById(R.id.btnGet);
